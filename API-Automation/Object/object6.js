@@ -1,20 +1,20 @@
 const request = require("supertest")
 const { expect } = require ("chai")
 
-async function getUnit(payload) {
+async function deleteUnit(payload) {
     
     return (await response)
 }
 
 module.exports = {
-    getUnit
+    deleteUnit
 }
 
 //Add Unit
-describe("Get Unit Detail", async ()=> {
-    it("Status code is 200", async () => {
+describe("Delete Unit", async ()=> {
+    it("name", async () => {
         const response = await request("https://kasir-api.belajarqa.com")
-        .get("/units/64280c30-30ff-4cdf-9320-ac673a521c37")
+        .delete("/units/64280c30-30ff-4cdf-9320-ac673a521c37")
         .set(
             {"Content-Type" : "application/json",
             "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE5ZjY0Y2JjLTgwNmMtNDYwNi1hYWY2LWFkNGRhZDBiNDkyZSIsImNvbXBhbnlJZCI6IjM2N2MwYjAyLWU4MzYtNDA2MS04YTIzLTA2NTIzYjQ5ZjU3NyIsImlhdCI6MTY5Njc4NTU0NX0.XoMOUvo8WSlpmOrrk1iV8yj87R1h-wGBAgblMhdS84Q",
@@ -24,7 +24,8 @@ describe("Get Unit Detail", async ()=> {
         // console.log(JSON.stringify(await response.body))
         //Assertion
         expect((await response).status).equal(200)
-        // expect((await response.body).message).to.include("Unit berhasil ditambahkan")
+        // expect(responseJson.data).to.include({ "name": "update-gram" });
+        // expect((await response.body.name)).to.include("update-gram")
     }) 
 
 })
